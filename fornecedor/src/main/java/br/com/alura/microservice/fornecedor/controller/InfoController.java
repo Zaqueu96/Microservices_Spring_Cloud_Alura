@@ -1,6 +1,5 @@
 package br.com.alura.microservice.fornecedor.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +11,12 @@ import br.com.alura.microservice.fornecedor.service.InfoService;
 @RestController
 @RequestMapping("/info")
 public class InfoController {
-
+	
 	@Autowired
-	private InfoService service;
+	private InfoService infoService;
 	
 	@RequestMapping("/{estado}")
 	public InfoFornecedor getInfoPorEstado(@PathVariable String estado) {
-		return this.service.getInfoPorEstado(estado);
+		return infoService.getInfoPorEstado(estado);
 	}
 }

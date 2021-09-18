@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import br.com.alura.microservice.loja.client.FornecedorClient;
 import br.com.alura.microservice.loja.dto.CompraDTO;
 import br.com.alura.microservice.loja.dto.InfoFornecedorDTO;
 
@@ -15,13 +16,14 @@ public class CompraService {
 	@Autowired
 	private RestTemplate client;
 	
+	@Autowired
+	FornecedorClient fornecedorClient;
+	
 	public void realizaCompra(CompraDTO compra) {
 		
-		 ResponseEntity<InfoFornecedorDTO> infoFornecedor = 
-				 this.client.exchange("http://fornecedor/info/"+compra.getEndereco().getEstado(),
-				HttpMethod.GET,null,InfoFornecedorDTO.class);
+		InfoFornecedorDTO infoFornecedor = this.fornecedorClient.getInfoPorEstado(compra.getEndereco().getEstado());
 		 
-		 System.out.println(infoFornecedor.getBody().getEndereco());
+		 System.out.println(infoFornecedor.getEndereco());
 //		return null;
 	}
 
