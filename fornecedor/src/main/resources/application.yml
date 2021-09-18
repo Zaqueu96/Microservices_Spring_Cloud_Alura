@@ -1,11 +1,19 @@
 
 server:
   port: 8081
-  
+      
+
+#
 spring:
- # Definindo nome da aplicação mostrada no eureka   
   application:
     name: 'fornecedor'
+  profiles:
+    active: default
+  config:
+    import:
+     optional:configserver:http://localhost:8888
+ 
+
 
 # Configuração para o Eureka Client para se registrar no Eureka Server 
 eureka:
