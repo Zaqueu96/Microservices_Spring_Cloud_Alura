@@ -1,0 +1,14 @@
+package br.com.alura.microservice.loja.service;
+
+import org.springframework.stereotype.Service;
+
+import br.com.alura.microservice.loja.dto.CompraDTO;
+
+@Service
+public class CompraService {
+
+	public Object realizaCompra(CompraDTO compra) {
+	
+	}
+
+}
