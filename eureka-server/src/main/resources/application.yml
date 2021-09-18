@@ -1,0 +1,9 @@
+
+server:
+  port: 8761
+
+# COnfiguração para o Eureka Server não se registrar nele mesmo  
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false

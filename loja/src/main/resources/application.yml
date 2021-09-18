@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: 'loja'
+
+# Configuração para o Eureka Client para se registrar no Eureka Server 
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka  

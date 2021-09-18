@@ -12,3 +12,15 @@ spring:
     username: root
     password: 
     driver-class-name: com.mysql.jdbc.Driver
+ 
+ # Definindo nome da aplicação mostrada no eureka   
+  application:
+    name: 'fornecedor'
+
+# Configuração para o Eureka Client para se registrar no Eureka Server 
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka  
