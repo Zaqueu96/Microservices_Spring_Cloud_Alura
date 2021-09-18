@@ -11,14 +11,15 @@ import br.com.alura.microservice.loja.dto.InfoFornecedorDTO;
 @Service
 public class CompraService {
 
-	public Object realizaCompra(CompraDTO compra) {
+	public void realizaCompra(CompraDTO compra) {
 		
 		RestTemplate client = new RestTemplate();
-		 ResponseEntity<InfoFornecedorDTO> infoFornecedor = client.exchange("http://localhost:8081/info/"+compra.getEndereco().getEstado(),
+		 ResponseEntity<InfoFornecedorDTO> infoFornecedor = 
+				 client.exchange("http://localhost:8081/info/"+compra.getEndereco().getEstado(),
 				HttpMethod.GET,null,InfoFornecedorDTO.class);
 		 
 		 System.out.println(infoFornecedor.getBody().getEndereco());
-		return null;
+//		return null;
 	}
 
 }

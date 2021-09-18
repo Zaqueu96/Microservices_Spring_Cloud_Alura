@@ -18,7 +18,7 @@ public class CompraController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public void realizaComprar(@RequestBody CompraDTO compra) {
-			return this.compraService.realizaCompra(compra);
+			 this.compraService.realizaCompra(compra);
 	}
 
 }
